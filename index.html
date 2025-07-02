@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <h1><span class="highlight"></span>Portfolio</h1>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Hello! I'm <span class="highlight">T Lakshmi Narayana</span></h2>
+      <p>A passionate student learning and building cool things with code.</p>
+      <a href="#contact" class="btn">Connect with me</a>
+    </div>
+    <div class="hero-img">
+      <img src="Professional.jpg" alt="Your Photo" class="profile-img" />
+    </div>
+  </section>
+
+  <section id="about">
+    <h3>About Me</h3>
+    <p>I’m currently a sophomore at VIT-AP, studying CSE. I enjoy solving problems, building web apps, and exploring tech trends.</p>
+  </section>
+
+  <section id="projects">
+    <h3>Projects/Internships</h3>
+    <div class="project-grid">
+      <div class="project-card">
+        <h4>Smart Waste Management System</h4>
+        <p>The project involves enhancing a smart dustbin capable of automatically segregating wet and dry waste using sensors and embedded code.</p>
+        <ul class="custom-bullets">
+          <li>Tested code for waste segregation using sensors.</li>
+          <li>Reported issues to developers for fixes.</li>
+          <li>Checked circuit connections for accuracy.</li>
+          <li>Verified overall product functionality.</li>
+        </ul>
+      </div>
+      <div class="project-card">
+        <h4>Machine Learning Intern – Skillcraft (June 2025)</h4>
+        <p>I worked on four ML projects that strengthened my understanding of key algorithms and applications.</p>
+        <ul class="custom-bullets">
+          <li>Linear Regression – Prediction and trend analysis.</li>
+          <li>K-Means Clustering – Data segmentation.</li>
+          <li>SVM – Classification models.</li>
+          <li>Hand Gesture Recognition – Detecting and classifying hand gestures.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h3>Skills</h3>
+    <ul class="skills-list">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>Git</li>
+      <li>Java</li>
+      <li>C/C++</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h3>Contact</h3>
+    <p>Feel free to connect with me through my social media profiles below!</p>
+    <div class="contact-links">
+      <a href="https://www.instagram.com/t_l_narayana.14" class="icon-link instagram" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://github.com/tlnarayana14" class="icon-link github" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/tlnarayana14/" class="icon-link linkedin" target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© T L Narayana | Designed with 💙</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector("#menu-toggle");
+    const navLinks = document.querySelector("#nav-links");
+    const header = document.querySelector("header");
+
+    toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    let lastScrollTop = 0;
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScroll > lastScrollTop) {
+        header.classList.add("hide");
+      } else {
+        header.classList.remove("hide");
+      }
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        header.classList.add("hide");
+      });
+    });
+  </script>
+
+</body>
+</html>
