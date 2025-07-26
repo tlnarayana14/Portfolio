@@ -17,11 +17,20 @@
         <i class="fas fa-bars"></i>
       </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about" class="nav-item">About</a></li>
+        <li><a href="#projects" class="nav-item">Projects</a></li>
+        <li><a href="#skills" class="nav-item">Skills</a></li>
+        <li><a href="#contact" class="nav-item">Contact</a></li>
+        <li><a href="#education" class="nav-item">Education</a></li>
       </ul>
+      <div class="theme-toggle">
+        <i class="fas fa-sun"></i>
+        <label class="switch">
+          <input type="checkbox" id="theme-switch" />
+          <span class="slider"></span>
+        </label>
+        <i class="fas fa-moon"></i>
+      </div>
     </nav>
   </header>
 
@@ -39,6 +48,27 @@
   <section id="about">
     <h3>About Me</h3>
     <p>I’m currently a sophomore at VIT-AP, studying CSE. I enjoy solving problems, building web apps, and exploring tech trends.</p>
+  </section>
+
+  <section id="education">
+    <h3>Education</h3>
+    <div class="education-container">
+      <div class="education-entry">
+        <h4>Vellore Institute of Technology – AP (2023 - 2027)</h4>
+        <p>B.Tech in Computer Science and Engineering</p>
+        <p>Current CGPA: 8.7 (as of 2nd year)</p>
+      </div>
+      <div class="education-entry">
+        <h4>Sri Vivekananda Junior College (2021 - 2023)</h4>
+        <p>Intermediate - MPC Stream</p>
+        <p>Percentage: 95%</p>
+      </div>
+      <div class="education-entry">
+        <h4>ZPHS Gundlakattamanchi (2016-2021)</h4>
+        <p>SSC - State Board</p>
+        <p>GPA: 9.7</p>
+      </div>
+    </div>
   </section>
 
   <section id="projects">
@@ -95,39 +125,9 @@
       </a>
     </div>
   </section>
-
   <footer>
     <p>© T L Narayana | Designed with 💙</p>
   </footer>
-
-  <script>
-    const toggle = document.querySelector("#menu-toggle");
-    const navLinks = document.querySelector("#nav-links");
-    const header = document.querySelector("header");
-
-    toggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-
-    let lastScrollTop = 0;
-    window.addEventListener("scroll", () => {
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-      if (currentScroll > lastScrollTop) {
-        header.classList.add("hide");
-      } else {
-        header.classList.remove("hide");
-      }
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    });
-
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-        header.classList.add("hide");
-      });
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
