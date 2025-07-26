@@ -25,6 +25,7 @@ const header = document.querySelector("header");
 
 toggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
+  document.body.classList.toggle("menu-open");
 });
 
 let lastScrollTop = 0;
@@ -37,10 +38,10 @@ window.addEventListener("scroll", () => {
   }
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
-
 document.querySelectorAll(".nav-links a").forEach(link => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("active");
+    document.body.classList.remove("menu-open");
     header.classList.add("hide");
   });
 });
